@@ -1,0 +1,15 @@
+{
+  "name": "andromeda-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "parcel ./src/**.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solid": "^0.2.1"
+  }
+}

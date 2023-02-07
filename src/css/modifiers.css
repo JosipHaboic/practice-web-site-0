@@ -1,0 +1,24 @@
+.center-all {
+	justify-content: center;
+	align-items: center;
+}
+
+.text-red {
+	color: var(--red);
+}
+
+.text-blue {
+	color: var(--blue);
+}
+
+.text-green {
+	color: var(--green);
+}
+
+.text-yellow {
+	color: var(--yellow);
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

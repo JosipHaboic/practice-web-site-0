@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Grids</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./index.css">
+	</head>
+
+	<body>
+		<div id="page-container">
+			<div class="page" id="page-0">
+
+				<header>
+					<theme-switch 
+						id="theme-switch"
+						themes="theme-dark theme-light theme-dark-andromeda"
+						default="theme-light"
+						key="andromeda-web-theme">
+						<button id="theme-switch-button" onclick="parentNode.switch()" class="uppercase">
+							Switch theme
+						</button>
+					</theme-switch>
+				</header>
+
+				<div class="container column fill-spacefill-space center-all">
+					<main>
+						<h1 class="uppercase">Andromeda Coding Studio</h1>
+						<br>
+						<h3 class="uppercase">
+							Web and AVR/ARM coding services
+						</h3>
+					</main>
+					<footer>
+						<p>Andromeda Studio 2023</p>
+					</footer>
+				</div>
+
+
+			</div>
+
+			<div class="page" id="page-1">
+				<h1>1</h1>
+				<div class="gauge" id="gauge-0"></div>
+			</div>
+			<div class="page" id="page-2">
+				<h1>2</h1>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus, est accusamus illo
+					consequatur cupiditate. Ipsum saepe ducimus fuga debitis pariatur doloribus quisquam quod
+					laudantium, minima aut nobis provident est?</p>
+			</div>
+		</div>
+	</body>
+
+	<script src="./main.js"></script>
+	<script src="./js/theme-switch.js"></script>
+	<script src="./js/page-roll.js"></script>
+
+</html>

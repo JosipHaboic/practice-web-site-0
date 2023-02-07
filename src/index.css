@@ -1,0 +1,93 @@
+@import url("./css/index.css");
+
+
+* {
+	font-family: "RobotoCondensed";
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: var(--background-image);
+	background-attachment: fixed;
+	color: var(--foreground);
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+
+p {
+	width: 50vw;
+}
+
+header {
+	height: var(--header-height);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: var(--main-height);
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: var(--footer-height);
+	/* background: linear-gradient(to right, transparent, var(--foreground), transparent); */
+	text-align: center;
+	/* border-top-left-radius: 50%;
+	border-top-right-radius: 50%; */
+}
+
+footer p {
+	text-transform: uppercase;
+	font-size: var(--small);
+	color: var(--yellow);
+}
+
+.page h1 {
+	font-size: var(--xx-large);
+}
+
+.page h2 {
+	font-size: var(--x-large);
+}
+
+.page h3 {
+	font-size: var(--large);
+}
+
+#theme-switch-button {
+	color: var(--foreground);
+	background: var(--background);
+	padding: 0.5rem 1rem;
+	border: none;
+	box-shadow: 0px 0px 12px -6px var(--foreground) inset;
+}
+
+@media screen and (max-width: 600px) {
+	p {
+		width: initial;
+	}
+
+	.page h1 {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.page h2 {
+		font-size: 2rem;
+	}
+
+	.page h3 {
+		font-size: 1rem;
+	}
+}

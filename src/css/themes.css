@@ -1,0 +1,62 @@
+.theme-dark {
+	--background: #001122;
+	--foreground: #e6f2ff;
+	--yellow: #FFC300;
+	--blue: #0080ff;
+	--red: #ff4000;
+	--green: #00ff40;
+
+	--background-image: var(--background);
+	/* --background-image: url("/assets/image/subtle-prism-dark.png") center no-repeat; */
+
+	--header-height: 5vh;
+	--main-height: 85vh;
+	--footer-height: 5vh;
+
+	--small: 0.75rem;
+	--medium: 1rem;
+	--large: 2rem;
+	--x-large: 4rem;
+	--xx-large: 6rem;
+}
+
+.theme-light {
+	--background: #e6f2ff;
+	--foreground: #001122;
+	--yellow: #856600;
+	--blue: #003870;
+	--red: #700000;
+	--green: #1b6b00;
+	/* --background-image: url("/assets/image/subtle-prism-light.png") center no-repeat; */
+	--background-image: var(--background);
+
+	--header-height: 5vh;
+	--main-height: 85vh;
+	--footer-height: 5vh;
+
+	--small: 0.75rem;
+	--medium: 1rem;
+	--large: 2rem;
+	--x-large: 4rem;
+	--xx-large: 6rem;
+}
+
+.theme-dark-andromeda {
+	--background: #001122;
+	--foreground: #e6f2ff;
+	--yellow: #FFC300;
+	--blue: #0080ff;
+	--red: #ff4000;
+	--green: #00ff40;
+	--background-image: url("/assets/image/andromeda.jpg") center no-repeat;
+
+	--header-height: 5vh;
+	--main-height: 85vh;
+	--footer-height: 5vh;
+
+	--small: 0.75rem;
+	--medium: 1rem;
+	--large: 2rem;
+	--x-large: 4rem;
+	--xx-large: 6rem;
+}
