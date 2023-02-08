@@ -110,4 +110,17 @@ footer p {
 	.page h3 {
 		font-size: 1rem;
 	}
+
+	.services h2 {
+		text-align: center;
+		padding: 1rem 0;
+	}
+
+	.services article section {
+		height: 20vh;
+	}
+
+	.icon--large {
+		width: 8rem;
+	}
 }

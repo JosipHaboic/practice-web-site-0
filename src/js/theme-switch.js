@@ -54,7 +54,7 @@ class ThemeSwitch extends HTMLElement {
 
 		// use some function to save theme name to e.g localStorage, Vuex store, or any other store
 		if (typeof saveStateFn === 'function') {
-			saveStateFn(themeName);
+			saveStateFn(this.themes[index]);
 		}
 	}
 }

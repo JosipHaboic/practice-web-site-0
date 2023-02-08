@@ -49,12 +49,46 @@
 	background-color: var(--background--1);
 }
 
+.bkg-2 {
+	background-color: var(--background--2);
+}
+
+.bkg-black {
+	background-color: var(--black);
+}
+
 .uppercase {
 	text-transform: uppercase;
 }
 
-.p-ud-small {
-	padding: var(--small) 0;
+.p-small {
+	padding: var(--small);
+}
+
+.p-medium {
+	padding: var(--medium);
+}
+
+.transition-all--slow {
+	transition: all 1s ease-in;
+}
+
+.transition-all--x-slow {
+	transition: all 2s ease-in;
+}
+
+.on-hover--grow {
+	font-size: initial;
+	transition: font-size 0.5s ease-out;
+}
+
+.on-hover--grow:hover {
+	font-size: var(--large);
+	transition: font-size 0.5s ease-out;
+}
+
+.not-selectable {
+	user-select: none;
 }
 
 @media screen and (max-width: 600px) {

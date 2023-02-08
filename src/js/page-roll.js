@@ -1,4 +1,4 @@
-class PageRoll extends HTMLElement{
+class PageRoll extends HTMLElement {
 	constructor() {
 		super();
 		this.currentPageIndex = 0;
@@ -16,25 +16,30 @@ class PageRoll extends HTMLElement{
 	}
 
 	goToPage() {
+
 		if (this.allow == 'down') {
 			if (this.currentPageIndex < 0 || this.currentPageIndex > this.numberOfPages()) {
 				this.currentPageIndex = 0;
 			}
 		}
 		if (this.allow == 'up-down') {
-			if (this.currentPageIndex > this.numberOfPages()) {
+			if (this.currentPageIndex >= this.numberOfPages()) {
 				this.currentPageIndex = 0;
 			}
 			if (this.currentPageIndex < 0) {
 				this.currentPageIndex = this.numberOfPages() + this.currentPageIndex;
 			}
 		}
+		try {
+			document.getElementById(`page-${this.currentPageIndex}`).scrollIntoView({
+				behavior: this.behavior,
+				block: this.block,
+				inline: this.inline,
+			});
+		} catch (error) {
+			console.error(error);
+		}
 
-		document.getElementById(`page-${this.currentPageIndex}`).scrollIntoView({
-			behavior: this.behavior,
-			block: this.block,
-			inline: this.inline,
-		});
 	}
 
 	handleWheel(event) {
@@ -49,6 +54,7 @@ class PageRoll extends HTMLElement{
 	}
 
 	handleKey(event) {
+
 		if (event.keyCode == 33) {
 			this.currentPageIndex -= 1
 		}
@@ -63,7 +69,6 @@ class PageRoll extends HTMLElement{
 		}
 
 		this.goToPage(this.currentPageIndex);
-
 	}
 
 	handleTouch() {
@@ -84,10 +89,10 @@ class PageRoll extends HTMLElement{
 }
 
 (function init() {
-// 	// const pageRoll = new PageRoll();
-// 	window.addEventListener('wheel', pageRoll.handleWheel.bind(pageRoll), { passive: false });
-// 	window.addEventListener('keydown', pageRoll.handleKey.bind(pageRoll)); //  ,{ passive: false }
-// 	// window.addEventListener('touchend', handlers.touchHandler); // , { passive: false }
+	// 	// const pageRoll = new PageRoll();
+	// 	window.addEventListener('wheel', pageRoll.handleWheel.bind(pageRoll), { passive: false });
+	// 	window.addEventListener('keydown', pageRoll.handleKey.bind(pageRoll)); //  ,{ passive: false }
+	// 	// window.addEventListener('touchend', handlers.touchHandler); // , { passive: false }
 	window.customElements.define('page-roll', PageRoll);
 })();
 
