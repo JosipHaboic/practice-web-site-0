@@ -1,43 +1,46 @@
 class ThemeSwitch extends HTMLElement {
 	/*
-		Custom elements based theme switcher
+		# Custom elements based theme switcher
 
-		How to:
-			1. Add class name to your html tag:
-			<html class="theme-blue-yellow"></html>
+		## How to
 
-			2. Define theme in your CSS:
+			### Define theme in your CSS:
 			.theme-blue-yellow {
 				--primary-color: #33cccc;
 				--secondary-color: #cccc33;
 				--background-color: #051414;
 			}
 
-			3. Add this custom element to your HTML
+			### Add this custom element to your HTML
+
 			<theme-switch
 				themes="theme-blue-yellow theme-dark-silver theme-deep-purple" default="theme-blue-yellow"
 				key="my-themes">
-				<button id="theme-switch" onclick="parentNode.switch()">Toggle Theme</button>
+				<button id="theme-switch" onclick="parentNode.dispatch()">Toggle Theme</button>
 			</theme-switch>
+
+
+			### Add your way of saving the theme name to preserve it on next page load
+
+			themeSwitch.addEventListener('theme-change', function onThemeChange(event) {
+				// change the theme and save current theme as state to localStorage to backend etc.
+				// replace default function with your own
+				this.switch((themeName) => localStorage.setItem('andromeda-web', themeName));
+			});
 	*/
 	constructor() {
 		super();
 		this.themes = this.getAttribute('themes').split(' ');
-		// if there is not set theme use default one
 		this.defaultTheme = this.getAttribute('default');
-		this.changeThemeEvent = new CustomEvent('theme-change', 
-			{detail: JSON.stringify(
-				{ themes: this.getAttribute('themes').split(' '), default: this.getAttribute('default')}
-			)}
-		);
+		this.changeThemeEvent = new Event('theme-change');
 		this.switch();
 	}
 	
-	switch() {
+	dispatch() {
 		this.dispatchEvent(this.changeThemeEvent);
 	}
 
-	defaultSwitcher() {
+	switch(saveStateFn) {
 		let themeName = document.querySelector(':root').className;
 		let index = this.themes.indexOf(themeName) || 0;
 		let length = this.themes.length;
@@ -48,7 +51,25 @@ class ThemeSwitch extends HTMLElement {
 		}
 
 		document.querySelector(':root').className = this.themes[index];
+
+		// use some function to save theme name to e.g localStorage, Vuex store, or any other store
+		if (typeof saveStateFn === 'function') {
+			saveStateFn(themeName);
+		}
 	}
 }
 
 window.customElements.define('theme-switch', ThemeSwitch);
+
+
+// example of how to switch theme and store theme name to localStorage
+// (function init() {
+// 	let themeSwitch = document.getElementById('theme-switch');
+
+// 	themeSwitch.addEventListener('theme-change', function onThemeChange(event) {
+// 		// change the theme and save current theme as state to localStorage to backend etc.
+// 		// replace default function with your own
+// 		this.switch((themeName) => localStorage.setItem('andromeda-web', themeName));
+// 	});
+
+// })();

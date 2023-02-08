@@ -1,0 +1,25 @@
+.theme-light {
+	--background: #e6f2ff;
+	--background--0: #cce5ff;
+	--background--1: #b3d7ff;
+	--foreground: #001122;
+	--black: #121212;
+	--white: #f2f2f2;
+	--yellow: #856600;
+	--blue: #003870;
+	--red: #700000;
+	--green: #1b6b00;
+	
+	/* --background-image: url("/assets/image/subtle-prism-light.png") center no-repeat; */
+	--background-image: var(--background);
+
+	--header-height: 5vh;
+	--main-height: 85vh;
+	--footer-height: 5vh;
+
+	--small: 0.75rem;
+	--medium: 1rem;
+	--large: 2rem;
+	--x-large: 4rem;
+	--xx-large: 6rem;
+}

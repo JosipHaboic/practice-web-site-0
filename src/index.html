@@ -11,22 +11,21 @@
 	</head>
 
 	<body>
+		<page-roll allow="up-down"></page-roll>
+		<!-- up-down down up-->
 		<div id="page-container">
-			<div class="page" id="page-0">
 
+			<div class="page" id="page-0">
 				<header>
-					<theme-switch 
-						id="theme-switch"
-						themes="theme-dark theme-light theme-dark-andromeda"
-						default="theme-light"
+					<theme-switch id="theme-switch" themes="theme-dark theme-light" default="theme-light"
 						key="andromeda-web-theme">
-						<button id="theme-switch-button" onclick="parentNode.switch()" class="uppercase">
+						<button id="theme-switch-button" onclick="parentNode.dispatch()" class="uppercase">
 							Switch theme
 						</button>
 					</theme-switch>
 				</header>
 
-				<div class="container column fill-spacefill-space center-all">
+				<div class="container column fill-space center-all">
 					<main>
 						<h1 class="uppercase">Andromeda Coding Studio</h1>
 						<br>
@@ -35,22 +34,39 @@
 						</h3>
 					</main>
 					<footer>
-						<p>Andromeda Studio 2023</p>
+						<p>Andromeda Studio<span class="text-foreground"> 2023</span></p>
 					</footer>
 				</div>
-
-
 			</div>
 
 			<div class="page" id="page-1">
-				<h1>1</h1>
-				<div class="gauge" id="gauge-0"></div>
+				<article class="container column center-all">
+					<section class="container column center-all">
+						<h2>FRONTEND TECHNOLOGIES</h2>
+						<div class="row center-all bkg-0 w-100">
+							<div class="column icon--large"><img src="../assets/image/reactjs-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/vuejs-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/w3_html5-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/javascript-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/typescriptlang-ar21.svg"></div>
+						</div>
+					</section>
+				</article>
 			</div>
+
 			<div class="page" id="page-2">
-				<h1>2</h1>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus, est accusamus illo
-					consequatur cupiditate. Ipsum saepe ducimus fuga debitis pariatur doloribus quisquam quod
-					laudantium, minima aut nobis provident est?</p>
+				<article class="container column center-all">
+					<section class="container column center-all">
+						<h2>BACKEND TECHNOLOGIES</h2>
+						<div class="row center-all bkg-0 w-100">
+							<div class="column icon--large"><img src="../assets/image/firebase-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/graphql-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/rust-lang-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/postgresql-ar21.svg"></div>
+							<div class="column icon--large"><img src="../assets/image/nodejs-ar21.svg"></div>
+						</div>
+					</section>
+				</article>
 			</div>
 		</div>
 	</body>

@@ -53,6 +53,14 @@ footer p {
 	color: var(--yellow);
 }
 
+#theme-switch-button {
+	color: var(--foreground);
+	background: var(--background);
+	padding: 0.5rem 1rem;
+	border: none;
+	box-shadow: 0px 0px 12px -6px var(--foreground) inset;
+}
+
 .page h1 {
 	font-size: var(--xx-large);
 }
@@ -65,12 +73,24 @@ footer p {
 	font-size: var(--large);
 }
 
-#theme-switch-button {
-	color: var(--foreground);
-	background: var(--background);
-	padding: 0.5rem 1rem;
-	border: none;
-	box-shadow: 0px 0px 12px -6px var(--foreground) inset;
+.services {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.services h2 {
+	text-align: center;
+	padding: 2rem 0;;
+}
+
+.services article section {
+	height: 50vh;
+}
+
+.icon--large {
+	width: 15rem;
 }
 
 @media screen and (max-width: 600px) {
